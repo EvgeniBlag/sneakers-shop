@@ -34,12 +34,29 @@ function App() {
 
 <div className="content p-40">
 
-  <h1 className="mb-40">All sneakers</h1>
+<div className="d-flex align-center justify-between mb-40">
+
+<h1>All sneakers</h1>
+
+<div className="search-block d-flex">
+
+  <img className="search-label" width={15} height={15} src="/img/search.png" alt="search"/>
+
+ <input placeholder="Search ...."/>
+
+</div>
+
+</div>
 
 <div className="d-flex">
 
 
 <div className="card">
+
+<div className="favorite">
+<img width={32} height={32} src="/img/favorite.png" alt="favorite"/>
+</div>
+
   <img width={133} height={112} src="/img/sneakers.jpg" alt="sneakers"/>
   <h5>
   Sneakers for man Nike Blazer Mid Suede
