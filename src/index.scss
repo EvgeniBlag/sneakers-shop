@@ -107,7 +107,6 @@ input{
 .drawer{
 display: flex;
 flex-direction: column;
-
 position: absolute;
 width: 420px;
 background: #FFFFFF;
@@ -116,13 +115,20 @@ height: 100%;
 right: 0px;
 padding: 30px;
 
+.items{
+  overflow:auto;
+  margin-bottom: 40px;
+}
+
 h2{
   margin: 0px;
-
-}
+ }
 }
 .cartTotalBlock{
-
+  
+  ul{
+  display: block;
+  margin-bottom: 40px !important;
   li{
     display: flex;
     align-items: flex-end;
@@ -136,6 +142,42 @@ h2{
     position: relative;
     top: -4px;
     margin: 0px, 7px;
+  }
+ }
+ .greenButton{
+   position: relative;
+
+   &:hover{
+     img{
+       transform: translateX(5px);
+     }
+   }
+   
+   img{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    transition: transform 0.15s ease-in-out;
+   }
+ }
+}
+.greenButton{
+  width: 100%;
+  height: 55px;
+  background: #9DD558;
+  border-radius: 18px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.1s ease-in-out;
+ 
+  &:hover{
+    background: lighten($color:#9DD558 , $amount: 5%);
+  }
+  &:active{
+  background: darken($color:#9DD558 , $amount: 5%);
   }
 }
 
