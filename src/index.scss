@@ -105,6 +105,8 @@ input{
 
 }
 .drawer{
+display: flex;
+flex-direction: column;
 
 position: absolute;
 width: 420px;
@@ -118,6 +120,23 @@ h2{
   margin: 0px;
 
 }
+}
+.cartTotalBlock{
+
+  li{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  div{
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dashed #dfdfdf;
+    position: relative;
+    top: -4px;
+    margin: 0px, 7px;
+  }
 }
 
 .overlay{
@@ -158,4 +177,7 @@ overflow: hidden;
   background-position: 0 -3px;
   background-repeat: no-repeat;
   margin-right: 20px;
+}
+.items{
+  flex: 1;
 }

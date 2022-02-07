@@ -7,11 +7,14 @@ function App() {
 
       <div className="overlay">
 
-      <div className="drawer">
+      <div className="drawer ">
+  
 
         <h2 className="mb-30">
           Cart
         </h2>
+
+        <div className="items">
 
         <div className="cartItem d-flex align-center mb-20">
 
@@ -52,6 +55,26 @@ function App() {
                 />
         </div>
 
+        </div>
+        <ul className="cartTotalBlock">
+
+          <li >
+            <span>Total:</span>
+            <div></div>
+            <b>210$</b>
+          </li>
+
+
+          <li >
+          <span>IVA 5%:</span>
+            <div></div>
+            <b>115$</b>
+          </li>
+
+        </ul>
+     
+
+       
 
       </div>
 
