@@ -1,14 +1,14 @@
 
 
-function Card() {
+function Card(props) {
  return(
 <div className="card">
 <div className="favorite">
 <img width={32} height={32} src="/img/favorite.png" alt="favorite"/>
 </div>
-  <img width={133} height={112} src="/img/sneakers.jpg" alt="sneakers"/>
+  <img width={133} height={112} src={props.imageUrl} alt="sneakers"/>
   <h5>
-  Sneakers for man Nike Blazer Mid Suede
+ {props.title}
   </h5>
  <div className=" d-flex justify-between align-center">
    <div className="d-flex flex-column ">
@@ -16,7 +16,7 @@ function Card() {
      price:
   </span>      
      <b>
-       120$
+       {props.price}$
      </b>
    </div>
    <button className="button">
