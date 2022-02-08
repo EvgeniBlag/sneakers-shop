@@ -1,8 +1,21 @@
+import ItemDriwer from "./ItemDriwer";
 
+ const arr2=[
+   {
+     title:"Sneakers for man Nike Blazer Mid Suede",
+     price:120  ,
+     imageUrl:"/img/sneakers.jpg"
+   },
+   {
+    title:"Sneakers unisex Nike Kyrie 7",
+    price:140  ,
+    imageUrl:"/img/sneakers2.jpg"
+  }
+];
 
 function Drawer (){
     return(
-        <div style={{display:'none'}}  className="overlay">
+        <div style={{display: "none"}}   className="overlay">
         <div className="drawer ">
         <h2 className=" d-flex justify-between mb-30 ">
           Cart
@@ -15,63 +28,13 @@ function Drawer (){
         </h2>
         <div className="items">
 
-        <div className="cartItem d-flex align-center mb-20">
-    
-        <img className=" cartItemImg mr-20"
-            src="/img/sneakers.jpg"
-            alt="sneakers"
-                          />
-
-       <div className="mr-20">
-         <p className="mb-5">Sneakers for man, Nike Air Max 270</p>
-         <b>120$</b>
-       </div>
-       
-       <img className="removeBtn"
-        width={32}
-         height={32}
-          src="/img/btnRemove.png"
-           alt="remove"
-                       />
-        </div>  
-        <div className="cartItem d-flex align-center mb-20">
-
-         <img className=" cartItemImg mr-20"
-            src="/img/sneakers.jpg"
-            alt="sneakers"
-                          />
-
-<div className="mr-20">
-<p className="mb-5">Sneakers for man, Nike Air Max 270</p>
-<b>120$</b>
-</div>
-
-<img className="removeBtn"
-    width={32}
-    height={32}
-    src="/img/btnRemove.png"
-    alt="remove"
-                />
-     </div>
-<div className="cartItem d-flex align-center mb-20">
-<img className=" cartItemImg mr-20"
-   src="/img/sneakers.jpg"
-   alt="sneakers"
-                 />
-
-<div className="mr-20">
-<p className="mb-5">Sneakers for man, Nike Air Max 270</p>
-<b>120$</b>
-</div>
-
-<img className="removeBtn"
-width={32}
-height={32}
-src="/img/btnRemove.png"
-alt="remove"
-       />
-
-        </div>
+       {arr2.map((obj)=>(
+         <ItemDriwer
+         title={obj.title}
+         price={obj.price}
+         imageUrl={obj.imageUrl}/>
+       ))}
+        
         </div>
      <div className="cartTotalBlock">
         <ul>

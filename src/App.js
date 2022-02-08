@@ -19,6 +19,11 @@ const arr =[
     price:280,
     imageUrl:"/img/sneakers3.jpg"
   },
+  {
+    title:" Sneakers for man Nike LeBron XVIII",
+    price:164,
+    imageUrl:"/img/sneakers4.jpg"
+  },
 
 ];
 
@@ -45,9 +50,7 @@ function App() {
 
 </div>
 </div>
-
 <div className="d-flex">
-
 
 {arr.map((obj)=>
  (
@@ -57,11 +60,6 @@ function App() {
    imageUrl={obj.imageUrl}
  />
 ))}
-
-
-
-
-
 
 </div>
 </div>
