@@ -4,7 +4,7 @@ function Card(props) {
 
  return(
 <div className={styles.card}>
-<div className="favorite">
+<div className={styles.favorite}>
 <img width={32} height={32} src="/img/favorite.png" alt="favorite"/>
 </div>
   <img width={133} height={112} src={props.imageUrl} alt="sneakers"/>
