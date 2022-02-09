@@ -30,27 +30,12 @@ const arr =[
 
 function App() {
 
-  const [count,setCount]= useState(5);
-
-  const plus =()=>{
-    setCount(count+1);
-  }
-  const menus =()=>{
-    setCount(count-1);
-  }
 
   return (
 
     <div className="wrapper clear">
 
-   <center>
-   <div>
-      <h1>{count}</h1>
-     <button onClick={plus}>+</button>
-     <button onClick={menus}>-</button>
-
-     </div>
-   </center>
+  
 
       <Drawer/>
       <Header/>
