@@ -30,15 +30,15 @@ const arr =[
 
 function App() {
 
+  const [cartOpened,setCartOpened]=useState(false);
 
   return (
 
     <div className="wrapper clear">
 
-  
-
-      <Drawer/>
-      <Header/>
+      { cartOpened ?  <Drawer onCloseCart={()=>setCartOpened(false)}/>: null}
+     
+      <Header onClickCart={()=>setCartOpened(true)}/>
 
 <div className="content p-40">
 
