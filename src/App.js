@@ -3,34 +3,24 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 
-const arr =[
-  {
-    title:"Sneakers for man Nike Blazer Mid Suede",
-    price:120,
-    imageUrl:"/img/sneakers.jpg"
-  },
-
-  {
-    title:"Sneakers unisex Nike Kyrie 7",
-    price:140,
-    imageUrl:"/img/sneakers2.jpg"
-  },
-  {
-    title:" Sneakers for man Jordan Air Jordan 11",
-    price:280,
-    imageUrl:"/img/sneakers3.jpg"
-  },
-  {
-    title:" Sneakers for man Nike LeBron XVIII",
-    price:164,
-    imageUrl:"/img/sneakers4.jpg"
-  },
-
-];
 
 function App() {
 
+  const [items,setItems] = useState([]);
+
   const [cartOpened,setCartOpened]=useState(false);
+
+React.useEffect(()=>{
+
+  fetch('https://6204ffec161670001741b2d8.mockapi.io/items')
+  .then((res)=>{
+    return res.json();
+  })
+  .then((json)=>{
+    setItems(json);
+  });
+
+},[]);
 
   return (
 
@@ -54,9 +44,9 @@ function App() {
 
 </div>
 </div>
-<div className="d-flex">
+<div className="d-flex flex-wrap">
 
-{arr.map((obj)=>
+{items.map((obj)=>
  (
    <Card
    title={obj.title}
