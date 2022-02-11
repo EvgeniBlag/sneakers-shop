@@ -45,6 +45,16 @@ border-radius: 10px;
 border: 1px solid #f3f3f3;
 padding: 0,15px;
 align-items: center;
+position: relative;
+
+.clear{
+  position: absolute;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+  top: 13px;
+  right: 15px;
+}
 
 .search-label{
   margin-left: 10px;

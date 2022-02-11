@@ -10,6 +10,8 @@ function App() {
 
   const [cartOpened,setCartOpened]=useState(false);
 
+  const[searchValue,setSearchValue]=useState('');
+
 React.useEffect(()=>{
 
   fetch('https://6204ffec161670001741b2d8.mockapi.io/items')
@@ -21,6 +23,11 @@ React.useEffect(()=>{
   });
 
 },[]);
+
+
+const onChangeInput =(event)=>{
+  setSearchValue(event.target.value);
+};
 
   return (
 
@@ -34,24 +41,30 @@ React.useEffect(()=>{
 
 <div className="d-flex align-center justify-between mb-40">
 
-<h1>All sneakers</h1>
+<h1>{ searchValue ? `Search by request:${searchValue}`:'All sneakers'}</h1>
 
 <div className="search-block d-flex">
 
   <img className="search-label" width={15} height={15} src="/img/search.png" alt="search"/>
 
- <input placeholder="Search ...."/>
+
+
+ {searchValue &&  <img onClick={()=>setSearchValue('')} className="clear cu-p" src="/img/btnRemove.png" alt="Clear"/>}
+
+
+ <input onChange={onChangeInput} value={searchValue} placeholder="Search ...."/>
 
 </div>
 </div>
 <div className="d-flex flex-wrap">
 
-{items.map((obj)=>
+{items.map((item,index)=>
  (
    <Card
-   title={obj.title}
-   price={obj.price}
-   imageUrl={obj.imageUrl}
+   key={index}
+   title={item.title}
+   price={item.price}
+   imageUrl={item.imageUrl}
  />
 ))}
 
