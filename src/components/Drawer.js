@@ -1,17 +1,4 @@
-import ItemDriwer from "./ItemDriwer";
 
- const arr2=[
-   {
-     title:"Sneakers for man Nike Blazer Mid Suede",
-     price:120  ,
-     imageUrl:"/img/sneakers.jpg"
-   },
-   {
-    title:"Sneakers unisex Nike Kyrie 7",
-    price:140  ,
-    imageUrl:"/img/sneakers2.jpg"
-  }
-];
 
 function Drawer (props){
     return(
@@ -26,14 +13,30 @@ function Drawer (props){
              alt="close"
                 />
         </h2>
-        <div className="items">
 
-       {arr2.map((obj)=>(
-         <ItemDriwer
-         title={obj.title}
-         price={obj.price}
-         imageUrl={obj.imageUrl}/>
-       ))}
+
+
+        <div className="items">
+{Items.map((obj)=>(
+  <div className="cartItem d-flex align-center mb-20">
+    <div>
+   style={{backgroundImage:`url(${obj.imageUrl})`}}
+   className="cartItemImg"
+   </div>
+
+   <div className="mr-20 flex" >
+     <p className="mb-5">{obj.title}</p>
+     <b>{obj.price}</b>
+   </div>
+
+   <img onClick={()=> onRemove (obj.id)}
+    className="removeBtn"
+     src="/img/btnRemove.png"
+     alt="Remove"
+     />
+
+  </div>
+))}
         
         </div>
      <div className="cartTotalBlock">
