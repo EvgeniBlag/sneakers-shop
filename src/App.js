@@ -49,7 +49,12 @@ const onChangeInput =(event)=>{
 
 
 
- {searchValue &&  <img onClick={()=>setSearchValue('')} className="clear cu-p" src="/img/btnRemove.png" alt="Clear"/>}
+ {searchValue &&( 
+   <img
+    onClick={()=>setSearchValue('')}
+     className="clear cu-p"
+      src="/img/btnRemove.png"
+       alt="Clear"/>)}
 
 
  <input onChange={onChangeInput} value={searchValue} placeholder="Search ...."/>
@@ -58,7 +63,8 @@ const onChangeInput =(event)=>{
 </div>
 <div className="d-flex flex-wrap">
 
-{items.map((item,index)=>
+{items.filter((item)=>item.title.toLowerCase().includes(searchValue.toLowerCase()))
+ .map((item,index)=>
  (
    <Card
    key={index}
