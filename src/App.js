@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
+import axios from "axios";
 
 
 function App() {
@@ -14,12 +15,10 @@ function App() {
 
 React.useEffect(()=>{
 
-  fetch('https://6204ffec161670001741b2d8.mockapi.io/items')
-  .then((res)=>{
-    return res.json();
-  })
-  .then((json)=>{
-    setItems(json);
+
+
+  axios.get('https://6204ffec161670001741b2d8.mockapi.io/items').then((res)=>{
+  setItems(res.data);
   });
 
 },[]);
@@ -72,6 +71,9 @@ const onChangeInput =(event)=>{
    price={item.price}
    imageUrl={item.imageUrl}
  />
+
+
+
 ))}
 
 </div>
